@@ -23,11 +23,13 @@ body {
   border-bottom: 3px solid #C7A740; /* gold */
 }
 .logo {
-  font-size: 1.8rem;
+    font-size: 1.8rem;
   color: #C7A740; /* gold */
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 2px;
+  white-space: nowrap;   /* prevent text from breaking into multiple lines */
+  display: inline-block; 
 }
 .nav-links {
   list-style: none;
