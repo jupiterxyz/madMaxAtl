@@ -485,3 +485,27 @@ footer {
     height: 120px !important;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-player{
+    left: 0 !important;
+    top: 0 !important;
+    width: 92vw !important;
+    max-width: 420px !important;
+    margin: 0 auto 16px !important;
+  }
+
+  /* visual=true uses a tall iframe; reduce it */
+  #scPlayer{
+    height: 180px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-player{
+    max-width: 360px !important;
+  }
+  #scPlayer{
+    height: 150px !important;
+  }
+}
