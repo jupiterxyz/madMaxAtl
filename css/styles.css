@@ -111,11 +111,6 @@ header {
     0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-.hero-player {
-  position: relative;
-  margin-left: 0;
-  margin-right: auto;
-}
 
 /* =========================
    FOOTER (FIXED + FLUSH BOTTOM)
@@ -211,6 +206,14 @@ footer {
   min-height: calc(100vh - 64px - 76px);
   overflow: hidden;
 }
+.hero-player {
+  position: absolute;
+  right: 125px;   /* move left/right */
+  top: 180px;    /* move up/down */
+  margin-left: 0;
+  margin-right: auto;
+}
+
 
 /* LEFT TEXT (TOP-LEFT AREA) */
 .hero-left {
