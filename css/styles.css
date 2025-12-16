@@ -8,7 +8,7 @@
 }
 
 html, body {
-  width: 100%;
+	 width: 100%;
   height: 100%;
 }
 
@@ -63,12 +63,16 @@ body {
   cursor: pointer;
 }
 
+#startMusic:hover {
+  opacity: 0.95;
+}
+
 /* =========================
-   HEADER
+   HEADER (FLUSH TOP)
 ========================= */
 header {
   background: #C7A740;
-  padding: 18px;
+  padding: 18px 18px;
 }
 
 .nav {
@@ -84,175 +88,452 @@ header {
   text-decoration: none;
   font-weight: 600;
   margin-right: 36px;
-  font-size: 28px;
+	font-size: 28px;
+}
+
+.nav-links a:last-child {
+  margin-right: 0;
 }
 
 .brand {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 48px;
+  letter-spacing: 0;
+  line-height: 1.1;
+
+  color: #F5F5F5;
+
+  /* layered black fills (20% x3) */
   text-shadow:
-    0 1px 0 rgba(0,0,0,.2),
-    0 2px 0 rgba(0,0,0,.2),
-    0 3px 0 rgba(0,0,0,.2);
+    0 1px 0 rgba(0, 0, 0, 0.2),
+    0 2px 0 rgba(0, 0, 0, 0.2),
+    0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* =========================
-   FOOTER
-========================= */
-:root { --footer-h: 76px; }
 
+
+
+/* =========================
+   FOOTER (FIXED + FLUSH BOTTOM)
+========================= */
 footer {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   background: #C7A740;
-  padding: 18px;
+  padding: 18px 18px;
   z-index: 50;
+	font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 18px;
+  letter-spacing: 0;
+  line-height: 1.1;
+
+  color: #F5F5F5;
+
+  /* layered black fills (20% x3) */
+  text-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.2),
+    0 2px 0 rgba(0, 0, 0, 0.2),
+    0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 18px;
   flex-wrap: wrap;
   text-align: center;
 }
 
-.contact-icons img { height: 26px; }
-.contact-icons i { font-size: 22px; }
+.footer-brand {
+  font-weight: 700;
+  color: #F5F5F5;
+}
+
+.contact-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PNG ICONS */
+.contact-icons img {
+  height: 26px;        /* keeps logos proportional */
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* FONT ICONS (phone/email/id) */
+.contact-icons i {
+  font-size: 22px;
+  color: #F5F5F5;
+}
+
+/* Hover effect */
+.contact-icons a:hover img,
+.contact-icons a:hover i {
+  transform: scale(1.15);
+  opacity: 0.9;
+}
+
+
+/* Make room so content doesn't hide under fixed footer */
+:root {
+  --footer-h: 76px; /* adjust if you change footer padding/font */
+}
 
 /* =========================
-   HERO
+   HERO 
 ========================= */
 .hero {
   position: relative;
-  padding: 70px 120px 140px;
-  min-height: calc(100vh - var(--footer-h));
+  width: 100%;
+  max-width: none;
+  margin: 0;
+
+  padding: 70px 120px 140px 120px;
+  min-height: calc(100vh - 64px - 76px);
   overflow: hidden;
 }
 
+/* LEFT TEXT (TOP-LEFT AREA) */
 .hero-left {
-  position: relative;
-  right: -50px;
-  top: -50px;
+	position: relative;
+
+  right: -50px;   /* move left/right */
+  top: -50px;    /* move up/down */
+
+  width: 250px;
+  height: auto;
 }
 
 .hero-left h1 {
   font-size: 36px;
   color: #C7A740;
-  white-space: nowrap;
+  line-height: 1.05;
+  margin-bottom: 18px;
+
+  white-space: nowrap; /* 🔑 keeps it on one line */
 }
 
+
+
+
+/* RIGHT AREA acts like a stage for overlays */
 .hero-right {
   position: absolute;
   inset: 0;
-  pointer-events: none;
+  pointer-events: none; /* prevents blocking clicks on text */
 }
 
-.hero-bottom-text {
+.hero-bottom-text{
   position: absolute;
   left: 0;
   right: 0;
-  bottom: var(--footer-h);
+  bottom: var(--footer-h) ; /* sits above footer */
+  z-index: 999; /* in front of DJ image */
+
+  width: 100%;
+  padding: 0 24px 6px;
   text-align: center;
-  z-index: 20;
+
+  pointer-events: none;
 }
 
-.hero-bottom-text h2 {
+.hero-bottom-text h2{
+  margin: 0 0 4px;
   font-size: 32px;
+  font-weight: 700;
+  color: #F5F5F5;
+	line-height: 1.1;
 }
 
-.hero-bottom-text p {
-  font-size: 22px;
-  text-shadow: 0 6px 28px rgba(0,0,0,.85);
+.hero-bottom-text p{
+  margin: 0;
+	margin-bottom: -85px;
+  font-size: clamp(22px, 2.1vw, 32px);
+  font-weight: 600;
+  line-height: 1.05;
+  color: #F5F5F5;
+
+  /* makes it readable over the image */
+  text-shadow: 0 6px 28px rgba(0,0,0,0.85);
 }
+
+
+
 
 /* =========================
-   DJ IMAGE
+   DJ IMAGE (BOTTOM CENTER + BEHIND FOOTER)
 ========================= */
 .dj-image {
-  position: absolute;
+    position: absolute;
   left: 50%;
   bottom: calc(var(--footer-h) * -0.35);
   transform: translateX(-50%);
+
   width: 2800px;
-  max-height: 90vh;
+  height: auto;
+
+  max-height: 90vh;     /* 🔑 limits vertical size */
+  object-fit: contain;
+
+  max-width: none;
   z-index: 5;
+  pointer-events: none;
 }
 
 /* =========================
-   LOGO
+   LOGO (RIGHT SIDE)
 ========================= */
 .dj-logo {
   position: absolute;
-  right: 125px;
-  top: 180px;
+
+  right: 125px;   /* move left/right */
+  top: 180px;    /* move up/down */
+
   width: 315px;
+  height: auto;
+
   z-index: 12;
+  pointer-events: none;
 }
 
 /* =========================
-   SOUNDCLOUD PLAYER (DESKTOP)
+   SOUNDCLOUD (TOP RIGHT + THICK GOLD BORDER)
 ========================= */
 .hero-player {
   position: relative;
-  left: -80px;
-  top: -50px;
+  left:  -80px;   /* move left/right */
+  top: -50px;    /* move up/down */
+
   width: 525px;
-  border: 4px solid #C7A740;
+  max-width: 560px;
+
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 22px 70px rgba(0,0,0,.75);
+
+  /* Thick border like screenshot */
+  border: 4px solid #C7A740;
+
+  box-shadow: 0 22px 70px rgba(0,0,0,0.75);
   z-index: 15;
-  pointer-events: auto;
+  pointer-events: auto; /* allow clicks */
 }
 
-.hero-player iframe {
-  width: 100%;
-  height: 300px;
-  border: 0;
-}
-
-/* =========================
-   MOBILE � THIS FIXES THE ISSUE
-========================= */
-@media (max-width: 768px) {
-  .nav { flex-direction: column; gap: 10px; }
-  .nav-links a { font-size: 16px; margin-right: 14px; }
-  .brand { font-size: 28px; }
-
-  .hero { padding: 40px 20px 140px; }
-
-  .hero-player {
-    left: 0 !important;
-    top: 0 !important;
-    width: 88vw !important;
-    max-width: 340px !important;
-    margin: 0 auto 12px !important;
+/* RESPONSIVE (LARGE DESKTOP / ULTRAWIDE (1440px+)) */
+@media (min-width: 1440px) {
+  .hero {
+    padding-left: 160px;
+    padding-right: 160px;
   }
 
-  /* SCALE DOWN SOUNDCLOUD LOGO + CONTENT */
+  .dj-image {
+    width: 3000px;
+  }
+
+  .hero-bottom-text p {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* RESPONSIVE STANDARD LAPTOP (1200–1439px) */
+@media (max-width: 1439px) and (min-width: 1200px) {
+  .dj-logo {
+    width: 280px;
+  }
+
+  .hero-player {
+    width: 500px;
+  }
+}
+
+/* RESPONSIVE TABLET (iPad / Android tablets) */
+@media (max-width: 1024px) {
+  .nav-links a {
+    font-size: 22px;
+    margin-right: 24px;
+  }
+
+  .brand {
+    font-size: 36px;
+  }
+
+  .hero-left h1 {
+    font-size: 32px;
+  }
+
+  .hero-bottom-text h2 {
+    font-size: 28px;
+  }
+
+  .hero-bottom-text p {
+    font-size: 22px;
+  }
+
+  .contact-icons img {
+    height: 24px;
+  }
+
+  .contact-icons i {
+    font-size: 20px;
+  }
+}
+
+/* RESPONSIVE MOBILE (iPhone & Android – Portrait) */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    margin-right: 14px;
+  }
+
+  .brand {
+    font-size: 28px;
+  }
+
+  .hero-left h1 {
+    font-size: 24px;
+  }
+
+  .hero-bottom-text h2 {
+    font-size: 20px;
+  }
+
+  .hero-bottom-text p {
+    font-size: 16px;
+  }
+
+  .contact-icons {
+    gap: 12px;
+  }
+
+  .contact-icons img {
+    height: 22px;
+  }
+
+  .contact-icons i {
+    font-size: 18px;
+  }
+}
+
+/* RESPONSIVE MOBILE SMALL MOBILE (Older iPhones / Small Android) */
+@media (max-width: 390px) {
+  .hero-left h1 {
+    font-size: 22px;
+  }
+
+  .hero-bottom-text p {
+    font-size: 15px;
+    line-height: 1.1;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}
+/* =========================
+   MOBILE FIX – SOUNDCLOUD PLAYER SIZE
+========================= */
+@media (max-width: 420px) {
+
+  .hero-player {
+    position: relative;
+    left: 0;
+    top: 0;
+
+    width: 92vw;        /* fit phone width */
+    max-width: 420px;  /* prevents oversized logo */
+    margin: 0 auto 18px;
+
+    border-width: 3px;
+    border-radius: 14px;
+  }
+
+  /* Reduce iframe height so play logo scales down */
   .hero-player iframe {
-    height: 200px !important;
-    transform: scale(0.85) !important;
-    transform-origin: top left !important;
-    width: calc(100% / 0.85) !important;
+    height: 140px !important;
   }
 }
 
 /* EXTRA SMALL PHONES */
 @media (max-width: 390px) {
-  .hero-player { max-width: 300px !important; }
-
-  .hero-player iframe {
-    height: 180px !important;
-    transform: scale(0.8) !important;
-    width: calc(100% / 0.8) !important;
+  .hero-player {
+    max-width: 360px;
   }
 
-  footer { font-size: 14px; }
+  .hero-player iframe {
+    height: 120px !important;
+  }
+}
+
+/* Base (desktop + large screens) */
+.hero-player {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 520px; /* adjust if needed */
+}
+
+#scPlayer {
+  width: 100%;
+  height: 220px; /* desktop height */
+}
+
+/* Tablets + phones */
+@media (max-width: 768px) {
+  .hero-player {
+    left: 0 !important;
+    top: 0 !important;
+    width: 92vw !important;
+    max-width: 420px !important;
+    margin: 0 auto 16px !important;
+  }
+
+  /* visual=true iframe is tall */
+  #scPlayer {
+    height: 180px !important;
+  }
+}
+
+/* Phones (all iPhones + small Android) */
+@media (max-width: 480px) {
+  .hero-player {
+    width: 92vw !important;
+    max-width: 360px !important;
+  }
+
+  #scPlayer {
+    height: 150px !important;
+  }
+}
+
+/* Small phones (iPhone SE / mini) */
+@media (max-width: 360px) {
+  .hero-player {
+    max-width: 320px !important;
+  }
+
+  #scPlayer {
+    height: 140px !important;
+  }
 }
