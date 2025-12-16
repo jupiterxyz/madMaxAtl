@@ -454,7 +454,7 @@ footer {
 /* =========================
    MOBILE FIX – SOUNDCLOUD PLAYER SIZE
 ========================= */
-@media (max-width: 768px) {
+@media (max-width: 420px) {
 
   .hero-player {
     position: relative;
