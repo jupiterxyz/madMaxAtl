@@ -112,8 +112,6 @@ header {
 }
 
 
-
-
 /* =========================
    FOOTER (FIXED + FLUSH BOTTOM)
 ========================= */
@@ -405,11 +403,23 @@ footer {
   .nav-links a {
     font-size: 16px;
     margin-right: 14px;
+	  text-decoration: none;
   }
-
+.brand,
+.brand:link,
+.brand:visited,
+.brand:hover,
+.brand:active {
+  text-decoration: none !important;
+  color: #F5F5F5;
+}
+	
   .brand {
-    font-size: 28px;
-  }
+  text-decoration: none;
+  color: #F5F5F5;
+  cursor: pointer;
+}
+
 
   .hero-left h1 {
     font-size: 24px;
@@ -449,91 +459,5 @@ footer {
 
   footer {
     font-size: 14px;
-  }
-}
-/* =========================
-   MOBILE FIX – SOUNDCLOUD PLAYER SIZE
-========================= */
-@media (max-width: 420px) {
-
-  .hero-player {
-    position: relative;
-    left: 0;
-    top: 0;
-
-    width: 92vw;        /* fit phone width */
-    max-width: 420px;  /* prevents oversized logo */
-    margin: 0 auto 18px;
-
-    border-width: 3px;
-    border-radius: 14px;
-  }
-
-  /* Reduce iframe height so play logo scales down */
-  .hero-player iframe {
-    height: 140px !important;
-  }
-}
-
-/* EXTRA SMALL PHONES */
-@media (max-width: 390px) {
-  .hero-player {
-    max-width: 360px;
-  }
-
-  .hero-player iframe {
-    height: 120px !important;
-  }
-}
-
-/* Base (desktop + large screens) */
-.hero-player {
-  position: relative;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 520px; /* adjust if needed */
-}
-
-#scPlayer {
-  width: 100%;
-  height: 220px; /* desktop height */
-}
-
-/* Tablets + phones */
-@media (max-width: 768px) {
-  .hero-player {
-    left: 0 !important;
-    top: 0 !important;
-    width: 92vw !important;
-    max-width: 420px !important;
-    margin: 0 auto 16px !important;
-  }
-
-  /* visual=true iframe is tall */
-  #scPlayer {
-    height: 180px !important;
-  }
-}
-
-/* Phones (all iPhones + small Android) */
-@media (max-width: 480px) {
-  .hero-player {
-    width: 92vw !important;
-    max-width: 360px !important;
-  }
-
-  #scPlayer {
-    height: 150px !important;
-  }
-}
-
-/* Small phones (iPhone SE / mini) */
-@media (max-width: 360px) {
-  .hero-player {
-    max-width: 320px !important;
-  }
-
-  #scPlayer {
-    height: 140px !important;
   }
 }
