@@ -111,11 +111,7 @@ header {
     0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-.hero-player {
-  position: relative;
-  margin-left: 0;
-  margin-right: auto;
-}
+
 
 
 /* =========================
@@ -211,6 +207,44 @@ footer {
   padding: 70px 120px 140px 120px;
   min-height: calc(100vh - 64px - 76px);
   overflow: hidden;
+	
+	left: 400px;
+left: 1px;
+top: 300;
+top: 300;
+
+}
+
+.hero-player {
+  position: absolute;          /* ? REQUIRED */
+  left: 80px;                  /* move left/right */
+  top: 180px;                  /* move up/down */
+
+  width: 620px;
+  display: flex;
+  flex-direction: column;
+
+  z-index: 6;
+}
+
+
+/* Title centered above iframe */
+.official-text{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+
+  font-size: 34px;
+  font-weight: 800;
+  color: #c7a740;
+}
+
+/* iframe fills the hero-player width */
+#scPlayer{
+  display: block;
+  width: 100%;
+  height: 240px;   /* adjust as you like */
+  border-radius: 16px;
 }
 
 /* LEFT TEXT (TOP-LEFT AREA) */
@@ -409,23 +443,11 @@ footer {
   .nav-links a {
     font-size: 16px;
     margin-right: 14px;
-	  text-decoration: none;
   }
-.brand,
-.brand:link,
-.brand:visited,
-.brand:hover,
-.brand:active {
-  text-decoration: none !important;
-  color: #F5F5F5;
-}
-	
-  .brand {
-  text-decoration: none;
-  color: #F5F5F5;
-  cursor: pointer;
-}
 
+  .brand {
+    font-size: 28px;
+  }
 
   .hero-left h1 {
     font-size: 24px;
@@ -467,4 +489,61 @@ footer {
     font-size: 14px;
   }
 }
+/* =========================
+   MOBILE FIX – SOUNDCLOUD PLAYER SIZE
+========================= */
+@media (max-width: 420px) {
 
+  .hero-player {
+    position: relative;
+    left: 0;
+    top: 0;
+
+    width: 92vw;        /* fit phone width */
+    max-width: 420px;  /* prevents oversized logo */
+    margin: 0 auto 18px;
+
+    border-width: 3px;
+    border-radius: 14px;
+  }
+
+  /* Reduce iframe height so play logo scales down */
+  .hero-player iframe {
+    height: 140px !important;
+  }
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 390px) {
+  .hero-player {
+    max-width: 360px;
+  }
+
+  .hero-player iframe {
+    height: 120px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-player{
+    left: 0 !important;
+    top: 0 !important;
+    width: 92vw !important;
+    max-width: 420px !important;
+    margin: 0 auto 16px !important;
+  }
+
+  /* visual=true uses a tall iframe; reduce it */
+  #scPlayer{
+    height: 180px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-player{
+    max-width: 360px !important;
+  }
+  #scPlayer{
+    height: 150px !important;
+  }
+}
