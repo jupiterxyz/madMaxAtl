@@ -3,90 +3,180 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DJ Mad Max – Official Website</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <title>DJ Mad Max ATL</title>
 
-  <!-- Font Awesome for Social Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+  />
+
+  <!-- ✅ FIXED CSS LINK -->
+  <link rel="stylesheet" href="css/styles.css"style.css"styles.css""" />
 </head>
 <body>
-  <!-- Header / Nav -->
+
+	<!--ENTER SITE POPUP OVERLAY 
+  
+  <div id="enterOverlay">
+    <div class="enter-box">
+      <h2>Welcome</h2>
+      <p>Are you ready for an unforgettable experience?</p>
+      <button id="startMusic">Enter Site</button>
+    </div>
+  </div>
+-->
+	
+  <!-- BACKGROUND MUSIC -->
+  <audio id="bgMusic" loop>
+    <source src="hope-kompa-beat-379950.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- HEADER -->
   <header>
-    <nav class="nav">
-      <h1 class="logo">DJ Mad Max Atl</h1>
-    <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#music">Music</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="nav">
+      <div class="nav-links">
+        <a href="#">About</a>
+        <a href="#">Music</a>
+        <a href="#">Events</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="brand">DJ MAD MAX ATL</div>
+    </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <section class="hero">
-    <h2>Feel the Beat. Live the Night.</h2>
-    <p>Official page of DJ Mad Max – spinning energy worldwide.</p>
 
-    <!-- Contact Info -->
-    <div class="hero-contact">
-      <p><strong>Phone:</strong> <a href="tel:+16786149757">+1 (678) 614-9757</a></p>
-      <p><strong>Email:</strong> <a href="mailto:bookmadmaxatl@gmail.com">bookmadmaxatl@gmail.com</a></p>
+    <!-- LEFT TEXT -->
+    <div class="hero-left">
+      <h1>Official Website</h1>
     </div>
 
-    <!-- Embedded SoundCloud Player (updated visual version) -->
-    <div class="hero-player">
-      <iframe 
-        width="100%" 
-        height="300" 
-        scrolling="no" 
-        frameborder="no" 
-        allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2119233360&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-      </iframe>
-      <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans, Garuda, Verdana, Tahoma, sans-serif; font-weight: 100;">
-        <a href="https://soundcloud.com/mad-max-desperot" title="Mad Max atl" target="_blank" style="color: #cccccc; text-decoration: none;">Mad Max Atl</a> · 
-        <a href="https://soundcloud.com/mad-max-desperot/mad-max-quick-jam-session-2025" title="Mad Max quick Jam session 2025.mp3" target="_blank" style="color: #cccccc; text-decoration: none;">Mad Max Quick Jam Session 2025</a>
+    <!-- RIGHT VISUAL -->
+    <div class="hero-right">
+
+      <!-- DJ IMAGE -->
+      <img
+        src="images/madMaxTransparentBackgroundPhoto1.png" headshoot"
+        alt="DJ Mad Max ATL"
+        class="dj-image"
+      />
+						
+<div class="hero-bottom-text">
+    <h2>The Voice of the Party</h2>
+
+    <p>
+      From ATL to worldwide, DJ Mad Max ATL is more than music, he’s a movement.
+    </p>
+  </div>
+
+</div>
+
+      <!-- LOGO OVERLAY -->
+      <img
+        src="images/madMaxLogoTransparent.png"images/mad-max-logo.png""
+        alt="Mad Max ATL Logo"
+        class="dj-logo"
+      />
+
+      <!-- SOUNDCLOUD PLAYER OVERLAY -->
+      <div class="hero-player">
+        <iframe
+          id="scPlayer"
+          title="DJ Mad Max ATL – Quick Jam Session 2025"
+          width="100%"
+          height="300"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/2119233360&enable_api=true&color=%23C7A740&auto_play=false&visual=true">
+        </iframe>
       </div>
+
     </div>
-  </section>
+	
 
-  <!-- About -->
-  <section id="about">
-    <h2>About DJ Mad Max</h2>
-    <p>Mad Max is known for electrifying sets blending house, hip-hop, and dancehall vibes...</p>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Contact & Bookings</h2>
 
-    <!-- Icon bar -->
-    <div class="social-icons">
-      <a href="tel:+16786149757" title="Call"><i class="fas fa-phone"></i></a>
-      <a href="mailto:bookmadmaxatl@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.instagram.com/madmaxatl" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://api.whatsapp.com/send?phone=6786149757" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://m.youtube.com/@madmax2999" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-      <a href="https://twitter.com/madmaxatl" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://dot.cards/madmaxatl" target="_blank" title="Dot Profile"><i class="fas fa-id-card"></i></a>
-    </div>
-  </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 DJ Mad Max | All Rights Reserved</p>
+    <div class="footer-content">
+
+      <div class="footer-brand">
+        DJ Mad Max ATL © <span id="year"></span>. All Rights Reserved.
+      </div>
+
+      <div class="contact-icons">
+
+  <a href="tel:+16786149757" aria-label="Phone">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+
+  <a href="mailto:bookmadmaxatl@gmail.com" aria-label="Email">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+
+  <a href="https://www.instagram.com/madmaxatl" target="_blank" aria-label="Instagram">
+    <img src="images/Instagram_Glyph_Gradient.png" alt="Instagram">
+  </a>
+
+  <a href="https://api.whatsapp.com/send?phone=16786149757" target="_blank" aria-label="WhatsApp">
+    <img src="images/Digital_Glyph_Green.png" alt="WhatsApp">
+  </a>
+
+  <a href="https://m.youtube.com/@madmax2999" target="_blank" aria-label="YouTube">
+    <img src="images/yt_logo_fullcolor_almostblack_digital.png" alt="YouTube">
+  </a>
+
+  <a href="https://twitter.com/madmaxatl" target="_blank" aria-label="X / Twitter">
+    <img src="images/logo-black.png" alt="X">
+  </a>
+
+  <a href="https://dot.cards/madmaxatl" target="_blank" aria-label="Digital Card">
+    <i class="fa-solid fa-id-card"></i>
+  </a>
+
+</div>
+
+
+    </div>
   </footer>
 
-  <!-- Floating Social Bar -->
-  <div class="floating-social">
-    <a href="tel:+16786149757" title="Call"><i class="fas fa-phone"></i></a>
-    <a href="mailto:bookmadmaxatl@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.instagram.com/madmaxatl" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://api.whatsapp.com/send?phone=6786149757" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://m.youtube.com/@madmax2999" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-    <a href="https://twitter.com/madmaxatl" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-    <a href="https://dot.cards/madmaxatl" target="_blank" title="Dot Profile"><i class="fas fa-id-card"></i></a>
-  </div>
+  <!-- SoundCloud API -->
+  <script src="https://w.soundcloud.com/player/api.js"></script>
+
+  <!-- MAIN SCRIPT -->
+  <script>
+    // Auto year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const bgMusic = document.getElementById("bgMusic");
+    const startBtn = document.getElementById("startMusic");
+    const overlay = document.getElementById("enterOverlay");
+
+    // Start music + hide overlay
+    startBtn.addEventListener("click", () => {
+      bgMusic.volume = 0.3;
+      bgMusic.play();
+      overlay.style.display = "none";
+    });
+
+    // SoundCloud interaction
+    const scWidget = SC.Widget(document.getElementById("scPlayer"));
+
+    scWidget.bind(SC.Widget.Events.PLAY, () => bgMusic.pause());
+    scWidget.bind(SC.Widget.Events.PAUSE, () => bgMusic.play().catch(() => {}));
+    scWidget.bind(SC.Widget.Events.FINISH, () => bgMusic.play().catch(() => {}));
+  </script>
+
 </body>
 </html>
+
+
+

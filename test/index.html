@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJ Mad Max ATL</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+  />
+
+  <!-- ✅ FIXED CSS LINK -->
+  <link rel="stylesheet" href="style.css"styles.css"" />
+</head>
+<body>
+
+	<!--ENTER SITE POPUP OVERLAY -->
+  
+  <div id="enterOverlay">
+    <div class="enter-box">
+      <h2>Welcome</h2>
+      <p>Are you ready for an unforgettable experience?</p>
+      <button id="startMusic">Enter Site</button>
+    </div>
+  </div>
+
+	
+  <!-- BACKGROUND MUSIC -->
+  <audio id="bgMusic" loop>
+    <source src="hope-kompa-beat-379950.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+      <div class="nav-links">
+        <a href="#">About</a>
+        <a href="#">Music</a>
+        <a href="#">Events</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="brand">DJ MAD MAX ATL</div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <!-- LEFT TEXT -->
+    <div class="hero-left">
+      <h1>Official Website</h1>
+    </div>
+
+    <!-- RIGHT VISUAL -->
+    <div class="hero-right">
+
+      <!-- DJ IMAGE -->
+      <img
+        src="madMaxTransparentBackgroundPhoto1.png" headshoot"
+        alt="DJ Mad Max ATL"
+        class="dj-image"
+      />
+						
+<div class="hero-bottom-text">
+    <h2>The Voice of the Party</h2>
+
+    <p>
+      From ATL to worldwide, DJ Mad Max ATL is more than music, he’s a movement.
+    </p>
+  </div>
+
+</div>
+
+      <!-- LOGO OVERLAY -->
+      <img
+        src="madMaxLogoTransparent.png"images/mad-max-logo.png""
+        alt="Mad Max ATL Logo"
+        class="dj-logo"
+      />
+
+      <!-- SOUNDCLOUD PLAYER OVERLAY -->
+      <div class="hero-player">
+        <iframe
+          id="scPlayer"
+          title="DJ Mad Max ATL – Quick Jam Session 2025"
+          width="100%"
+          height="300"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/2119233360&enable_api=true&color=%23C7A740&auto_play=false&visual=true">
+        </iframe>
+      </div>
+
+    </div>
+	
+
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+
+      <div class="footer-brand">
+        DJ Mad Max ATL © <span id="year"></span>. All Rights Reserved.
+      </div>
+
+      <div class="contact-icons">
+
+  <a href="tel:+16786149757" aria-label="Phone">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+
+  <a href="mailto:bookmadmaxatl@gmail.com" aria-label="Email">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+
+  <a href="https://www.instagram.com/madmaxatl" target="_blank" aria-label="Instagram">
+    <img src="Instagram_Glyph_Gradient.png" alt="Instagram">
+  </a>
+
+  <a href="https://api.whatsapp.com/send?phone=16786149757" target="_blank" aria-label="WhatsApp">
+    <img src="Digital_Glyph_Green.png" alt="WhatsApp">
+  </a>
+
+  <a href="https://m.youtube.com/@madmax2999" target="_blank" aria-label="YouTube">
+    <img src="yt_logo_fullcolor_almostblack_digital.png" alt="YouTube">
+  </a>
+
+  <a href="https://twitter.com/madmaxatl" target="_blank" aria-label="X / Twitter">
+    <img src="logo-black.png" alt="X">
+  </a>
+
+  <a href="https://dot.cards/madmaxatl" target="_blank" aria-label="Digital Card">
+    <i class="fa-solid fa-id-card"></i>
+  </a>
+
+</div>
+
+
+    </div>
+  </footer>
+
+  <!-- SoundCloud API -->
+  <script src="https://w.soundcloud.com/player/api.js"></script>
+
+  <!-- MAIN SCRIPT -->
+  <script>
+    // Auto year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const bgMusic = document.getElementById("bgMusic");
+    const startBtn = document.getElementById("startMusic");
+    const overlay = document.getElementById("enterOverlay");
+
+    // Start music + hide overlay
+    startBtn.addEventListener("click", () => {
+      bgMusic.volume = 0.3;
+      bgMusic.play();
+      overlay.style.display = "none";
+    });
+
+    // SoundCloud interaction
+    const scWidget = SC.Widget(document.getElementById("scPlayer"));
+
+    scWidget.bind(SC.Widget.Events.PLAY, () => bgMusic.pause());
+    scWidget.bind(SC.Widget.Events.PAUSE, () => bgMusic.play().catch(() => {}));
+    scWidget.bind(SC.Widget.Events.FINISH, () => bgMusic.play().catch(() => {}));
+  </script>
+
+</body>
+</html>
+
+
+
